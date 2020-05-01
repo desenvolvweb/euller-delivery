@@ -1,0 +1,19 @@
+$layout-name: "l-aside";
+
+.#{$layout-name} {
+  background-color: #fff;
+  border-radius: $global-radius;
+  grid-area: aside;
+  margin-bottom: $global-module-size;
+  max-height: rem(200);
+  overflow: auto;
+  padding: $global-module-size;
+
+  @include breakpoint(large-up) {
+    margin-bottom: inherit;
+  }
+
+  @include breakpoint(large-up) {
+    max-height: none;
+  }
+}

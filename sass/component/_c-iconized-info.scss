@@ -1,0 +1,11 @@
+$component-name: "c-iconized-info";
+
+.#{$component-name} {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+
+  .c-icon {
+    margin: 0 auto rem(5) auto;
+  }
+}

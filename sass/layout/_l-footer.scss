@@ -1,0 +1,24 @@
+$layout-name: "l-footer";
+
+.#{$layout-name} {
+  background-color: var(--color-green);
+  display: flex;
+  flex-direction: column;
+  grid-area: footer;
+
+  &__info {
+    min-height: rem(200);
+  }
+
+  &__copyright {
+    background-color: var(--color-green-dark);
+    min-height: rem(75);
+  }
+
+  &__content {
+    @include breakpoint(large-up) {
+      max-width: $global-max-width;
+      margin: 0 auto;
+    }
+  }
+}

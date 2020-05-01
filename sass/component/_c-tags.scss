@@ -1,0 +1,32 @@
+$component-name: "c-tags";
+
+.#{$component-name} {
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+  &__item {
+    margin: rem(10) rem(5);
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+
+  &__link {
+    background-color: var(--color-gray);
+    border-radius: $global-radius;
+    color: #fff;
+    font-size: rem(14);
+    padding: rem(5) rem(10);
+    text-decoration: none;
+    opacity: 0.5;
+
+    &:hover {
+      background-color: var(--color-orange);
+      opacity: 1;
+    }
+  }
+}

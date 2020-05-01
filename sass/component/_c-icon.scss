@@ -1,0 +1,10 @@
+$component-name: "c-icon";
+
+.#{$component-name} {
+  display: inline-block;
+  fill: currentColor;
+  height: rem(25);
+  overflow: hidden;
+  vertical-align: text-bottom;
+  width: rem(25);
+}

@@ -53,8 +53,19 @@ sub {
 // ==========================================================================
 
 body {
+  background-color: var(--color-pastel);
   font-family: Nunito, sans-serif;
+  grid-row-gap: $global-module-size;
   font-size: $global-font-size;
+  grid-template-areas:
+    "header header  header"
+    ".      main    .     "
+    "footer footer  footer";
+  grid-template-columns: 1fr $global-max-width 1fr;
+
+  @include breakpoint(large-up) {
+    display: grid;
+  }
 }
 
 // ::selection {

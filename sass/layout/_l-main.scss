@@ -1,0 +1,25 @@
+$layout-name: "l-main";
+
+.#{$layout-name} {
+  display: grid;
+  grid-area: main;
+  grid-template-areas:
+    "aside  "
+    "content";
+  padding: $global-module-size;
+
+  @include breakpoint(large-up) {
+    grid-gap: $global-module-size;
+    grid-template-areas:
+      "aside content"
+      ".     content";
+    grid-template-columns: rem(250) 1fr;
+    grid-template-rows: minmax(0, auto) 1fr;
+    padding: inherit;
+  }
+
+  .is-page-single & {
+    grid-template-areas: "content aside";
+    grid-template-columns: 1fr rem(250);
+  }
+}

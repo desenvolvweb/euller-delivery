@@ -1,0 +1,13 @@
+$component-name: "l-header";
+
+.#{$component-name} {
+  background-color: var(--color-orange);
+  grid-area: header;
+  grid-template-columns: $global-max-width;
+  height: rem(70);
+  justify-content: center;
+
+  @include breakpoint(large-up) {
+    display: grid;
+  }
+}

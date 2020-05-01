@@ -1,0 +1,151 @@
+$component-name: "c-card";
+
+.#{$component-name} {
+  background-color: #fff;
+  border-radius: $global-radius;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: $global-module-size;
+  position: relative;
+
+  &:not(:last-child) {
+    margin-bottom: $global-module-size;
+  }
+
+  @include breakpoint(large-up) {
+    flex-direction: row;
+    height: rem(250);
+    justify-content: space-between;
+  }
+
+  &.is-closed {
+    pointer-events: none;
+
+    &::before {
+      align-items: center;
+      background-color: rgba(gray, 0.95);
+      color: #fff;
+      content: "Fechado";
+      display: flex;
+      font-size: 250%;
+      height: 100%;
+      justify-content: center;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      z-index: z-index(default);
+    }
+  }
+
+  &__image {
+    align-self: center;
+    border-radius: 50%;
+    max-width: rem(160);
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__identification {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    @include breakpoint(large-up) {
+      align-items: flex-start;
+      text-align: inherit;
+    }
+  }
+
+  .c-tags {
+    margin: 0;
+  }
+
+  &__name {
+    margin-bottom: 0;
+    line-height: 1;
+
+    @include breakpoint(large-up) {
+      margin-top: 0;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: $global-module-size;
+
+    @include breakpoint(small-up) {
+      flex-direction: row;
+      justify-content: center;
+    }
+
+    @include breakpoint(large-up) {
+      justify-content: flex-start;
+      margin-top: 0;
+    }
+  }
+
+  .c-iconized-info {
+    width: 100%;
+
+    @include breakpoint(small-up) {
+      width: inherit;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: $global-module-size / 2;
+
+      @include breakpoint(small-up) {
+        margin-bottom: inherit;
+        margin-right: $global-module-size;
+      }
+    }
+  }
+
+  &__cta {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin-top: $global-module-size;
+
+    @include breakpoint(large-up) {
+      margin-top: $global-module-size;
+      padding-top: rem(10);
+    }
+
+    .c-button {
+      align-self: center;
+      padding: rem(15) rem(20);
+
+      @include breakpoint(large-up) {
+        align-self: start;
+        margin-bottom: $global-module-size / 2;
+        padding: rem(10) rem(15);
+      }
+    }
+
+    .c-iconized-info {
+      width: inherit;
+    }
+  }
+
+  &__favorite {
+    color: var(--color-orange);
+    position: absolute;
+    right: $global-module-size;
+    top: $global-module-size;
+
+    &:hover {
+      transform: scale(1.25);
+    }
+  }
+}

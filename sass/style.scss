@@ -10,6 +10,14 @@
 @import "abstract/z-index";
 
 :root {
+  @each $name, $color in $project-colors {
+    --color-#{$name}: #{$color};
+
+    .has-color-#{$name} {
+      color: #{$color};
+    }
+  }
+
   @each $name, $color in $webfatorial-colors {
     --color-#{$name}: #{$color};
   }
@@ -29,32 +37,33 @@
 
 @import "vendor/normalize";
 
-
-
 // ==========================================================================
 // Base
 // ==========================================================================
 
-@import 'base/elements';
-@import 'base/generics';
-
-
+@import "base/elements";
+@import "base/generics";
 
 // ==========================================================================
 // Layout
 // ==========================================================================
 
-// @import "layout/l-";
-
-
+@import "layout/l-header";
+@import "layout/l-main";
+@import "layout/l-content";
+@import "layout/l-aside";
+@import "layout/l-footer";
 
 // ==========================================================================
 // Component
 // ==========================================================================
 
-// @import "component/c-";
-
-
+@import "component/c-filter";
+@import "component/c-card";
+@import "component/c-tags";
+@import "component/c-iconized-info";
+@import "component/c-icon";
+@import "component/c-button";
 
 // ==========================================================================
 // State
@@ -62,23 +71,17 @@
 
 // @import "state/is-";
 
-
-
 // ==========================================================================
 // Page
 // ==========================================================================
 
 // @import "page/";
 
-
-
 // ==========================================================================
 // Theme
 // ==========================================================================
 
 // @import "theme/t-";
-
-
 
 // ==========================================================================
 // Shame (hacks & dishonorable stuff)

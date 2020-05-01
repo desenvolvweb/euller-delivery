@@ -1,0 +1,26 @@
+$component-name: "c-filter";
+
+.#{$component-name} {
+  border: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+
+  &:not(:last-child) {
+    margin-bottom: $global-module-size;
+  }
+
+  &__legend {
+    border-bottom: rem(1) solid var(--color-gray);
+    display: inline-block;
+    margin-bottom: $global-module-size / 2;
+    padding-bottom: rem(5);
+    width: 100%;
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: rem(10);
+    }
+  }
+}

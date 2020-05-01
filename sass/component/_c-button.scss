@@ -1,0 +1,13 @@
+$component-name: "c-button";
+
+.#{$component-name} {
+  background-color: var(--color-orange-light);
+  border-radius: $global-radius / 2;
+  color: #fff;
+  padding: rem(10) rem(15);
+  text-decoration: none;
+
+  &:hover {
+    background-color: var(--color-orange-dark);
+  }
+}
